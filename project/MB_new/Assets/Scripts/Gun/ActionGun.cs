@@ -5,9 +5,13 @@ public class ActionGun : MonoBehaviour {
 	public GameObject Particle_System;
 	public int Damage;
 	public float Time;
+
+
+
 	// Use this for initialization
 	void Start () {
 		StartCoroutine (WaitAndDestroy());
+
 	
 	}
 	
@@ -19,10 +23,10 @@ public class ActionGun : MonoBehaviour {
 	IEnumerator WaitAndDestroy()
 	{
 		yield return new WaitForSeconds (4); //ждем сколько-то секунд
+
 		Collider2D[] _col = Physics2D.OverlapCircleAll(gameObject.transform.position, 3); //получаем списо коллайдеров в определенном радиусе от объекта
 		GameObject newParticle = Instantiate (Particle_System);
 		newParticle.transform.position = new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y);
-		Destroy (newParticle, Time);
 		foreach (var col in _col) //пробегаемся по этим коллайдерам 
 		{
 			if (col.tag == "Walls") //если коллайдер стена то наносим урон
@@ -47,6 +51,7 @@ public class ActionGun : MonoBehaviour {
 				Destroy(col.gameObject);
 			}
 		}
+
 
 	}
 }

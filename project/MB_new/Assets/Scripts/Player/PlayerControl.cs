@@ -15,7 +15,7 @@ public class PlayerControl : MonoBehaviour {
 	private float direction_x, direction_y; //направление по оси x  и по оси y для передвижения в рахных направлениях
 	private Rigidbody2D rb2d; //переменная для доступа к параметрам твердого тела
 	private Animator _animator; //переменная для доступа к параметрам аниматора
-	private float offset = 0.1f;//смещение относительно центра клетки в диапазоне которого проверяется нажатие клавиш управления
+	private float offset = 0.15f;//смещение относительно центра клетки в диапазоне которого проверяется нажатие клавиш управления
 	private Vector3 DestinationVector;
 	// Use this for initialization
 	void Start () {
