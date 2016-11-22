@@ -39,34 +39,4 @@ public class Damage : MonoBehaviour {
 
 		}
 	}
-
-	void OnCollisionEnter(Collider2D collider)
-	{
-
-
-		if (collider.tag == "Walls" || collider.tag == "Plate")
-		{
-			Destroy (gameObject);
-
-
-		}
-		if (collider.tag == "Enemys")
-		{
-
-			Destroy (gameObject);
-			Destroy (collider.gameObject);
-
-		}
-		if (collider.tag == "Players")
-		{
-			collider.GetComponent<PlayerState> ().currentHealth -= _Damage;
-			Destroy (gameObject);
-
-
-		}
-	}
-
-
 }
-
-

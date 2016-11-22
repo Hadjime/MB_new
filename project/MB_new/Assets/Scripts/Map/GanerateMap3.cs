@@ -36,7 +36,7 @@ public class GanerateMap3 : MonoBehaviour {
 
 
 		BuildMap (); //строим карту в соответствии с матрицей
-		GameObject.Find ("Player_red").transform.position = new Vector2 (48, 1);//ставим персоннажа в угол
+		GameObject.Find ("Player_red").transform.position = new Vector2 (25, 1);//ставим персоннажа в угол
 		GameObject.Find ("Player_blue").transform.position = new Vector2 (1, 23);//ставим персоннажа в угол	
 	}
 	

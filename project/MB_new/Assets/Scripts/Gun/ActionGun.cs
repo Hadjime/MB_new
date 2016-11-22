@@ -32,26 +32,22 @@ public class ActionGun : MonoBehaviour {
 			if (col.tag == "Walls") //если коллайдер стена то наносим урон
 			{
 				col.GetComponent<WallState> ().CurrentHealth -= Damage; //наносим урон стене
-				Destroy (gameObject);//удаляем обект со сцены
 			}
 			if (col.tag == "Players") //если коллайдер стена то наносим урон
 			{
 				col.GetComponent<PlayerState> ().currentHealth -= Damage; //наносим урон стене
-				Destroy (gameObject);//удаляем обект со сцены
 			}
 			if (col.tag == "Item") //если коллайдер стена то наносим урон
 			{
-				Destroy (gameObject);//удаляем обект со сцены
 				Destroy(col.gameObject);
 			}
 			if (col.tag == "Enemys") //если коллайдер стена то наносим урон
 			{
 				col.GetComponent<EnemyState> ().currentHealth -= Damage; //наносим урон стене
-				Destroy (gameObject);//удаляем обект со сцены
-				Destroy(col.gameObject);
 			}
 		}
-
+		Destroy (newParticle, Time);
+		Destroy (gameObject);
 
 	}
 }
