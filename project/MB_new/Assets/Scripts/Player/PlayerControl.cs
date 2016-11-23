@@ -218,7 +218,7 @@ public class PlayerControl : MonoBehaviour {
 	{
 		if (FlagOnKeyRight == true || FlagRedOnKeyRight == true) //если флаг установлен то персонаж дойдет до точки поворота и повернет на право
 		{ 
-			if ((this.transform.position.y >= Mathf.Round (this.transform.position.y) - offset && this.transform.position.y <= Mathf.Round (this.transform.position.y))) { //поворачиваем только когда находимся около целого значения сетки
+			if ((this.transform.position.y >= Mathf.Round (this.transform.position.y) - offset) && (this.transform.position.y <= Mathf.Round (this.transform.position.y) + offset)) { //поворачиваем только когда находимся около целого значения сетки
 				if (this.transform.rotation.eulerAngles.z != 0) { //проверяем если персонаж повернут в том же направлении куда поворачиваем то ничего не делаем
 					direction_x = 1; //направление в право
 					if (this.transform.rotation.eulerAngles.z != 180) {//если мы развернулись на 180 градусов то не делаем перемещение к целой части сетки перемещения, иначе будут телепортации
@@ -242,7 +242,7 @@ public class PlayerControl : MonoBehaviour {
 	{
 		if (FlagOnKeyLeft == true || FlagRedOnKeyLeft == true) //если флаг установлен то персонаж дойдет до точки поворота и повернет на лево
 		{ 
-			if (this.transform.position.y >= Mathf.Round (this.transform.position.y) - offset && this.transform.position.y <= Mathf.Round (this.transform.position.y)) {//поворачиваем только когда находимся около целого значения сетки
+			if ((this.transform.position.y >= Mathf.Round (this.transform.position.y) - offset) && (this.transform.position.y <= Mathf.Round (this.transform.position.y) + offset)) {//поворачиваем только когда находимся около целого значения сетки
 				if (this.transform.rotation.eulerAngles.z != 180) { //проверяем если персонаж повернут в том же направлении куда поворачиваем то ничего не делаем
 					direction_x = -1; //направление в лево
 					if (this.transform.rotation.eulerAngles.z != 0) {//если мы развернулись на 180 градусов то не делаем перемещение к целой части сетки перемещения, иначе будут телепортации
@@ -266,7 +266,7 @@ public class PlayerControl : MonoBehaviour {
 	{
 		if (FlagOnKeyUp == true || FlagRedOnKeyUp == true) //если флаг установлен то персонаж дойдет до точки поворота и повернет вверх
 		{ 
-			if (this.transform.position.x >= Mathf.Round (this.transform.position.x) - offset && this.transform.position.x <= Mathf.Round (this.transform.position.x)) {//поворачиваем только когда находимся около целого значения сетки
+			if ((this.transform.position.x >= Mathf.Round (this.transform.position.x) - offset) && (this.transform.position.x <= Mathf.Round (this.transform.position.x) + offset)) {//поворачиваем только когда находимся около целого значения сетки
 				if (this.transform.rotation.eulerAngles.z != 90) { //проверяем если персонаж повернут в том же направлении куда поворачиваем то ничего не делаем
 					direction_y = 1; //направление в верх
 					if (this.transform.rotation.eulerAngles.z != 270) {//если мы развернулись на 180 градусов то не делаем перемещение к целой части сетки перемещения, иначе будут телепортации
@@ -290,7 +290,7 @@ public class PlayerControl : MonoBehaviour {
 	{
 		if (FlagOnKeyDown == true || FlagRedOnKeyDown == true) //если флаг установлен то персонаж дойдет до точки поворота и повернет вниз
 		{
-			if (this.transform.position.x >= Mathf.Round (this.transform.position.x) - offset && this.transform.position.x <= Mathf.Round (this.transform.position.x)) {//поворачиваем только когда находимся около целого значения сетки
+			if ((this.transform.position.x >= Mathf.Round (this.transform.position.x) - offset) && (this.transform.position.x <= Mathf.Round (this.transform.position.x) + offset)) {//поворачиваем только когда находимся около целого значения сетки
 				if (this.transform.rotation.eulerAngles.z != 270) { //проверяем если персонаж повернут в том же направлении куда поворачиваем то ничего не делаем
 					direction_y = -1; //направление в низ
 					if (this.transform.rotation.eulerAngles.z != 90) {//если мы развернулись на 180 градусов то не делаем перемещение к целой части сетки перемещения, иначе будут телепортации
